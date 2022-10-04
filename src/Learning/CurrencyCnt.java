@@ -1,11 +1,11 @@
+package Learning;
+
 public class CurrencyCnt {
     public static void main(String[] args) {
-
         // 현금으로 돈을 받고 25000원을 거슬러 주어야 합니다.
-        // 5만원짜리는 몇장 만원짜리는 몇장 5천원짜리는 몇장을 나눠줘야 할까요?
+        // 5만원은 몇 장, 1만원은 몇 장, 5천원은 몇장을 나눠줘야 할까요?
 
         /*
-        // 내 풀이
         int money = 25000;
 
         int m1 = (int)(money % 50000) / 50000;
@@ -13,11 +13,13 @@ public class CurrencyCnt {
         int m3 = (int)(money % 10000) / 5000;
 
         System.out.println("금액 : " + money);
-        System.out.println("5만원권 : " + m1 + " " + "1만원권 : " + m2 + " " + "5천원권 : " + m3);
+        System.out.println("5만원권 : " + m1
+                   + " " + "1만원권 : " + m2
+                   + " " + "5천원권 : " + m3);
         */
 
+        // 다른 풀이
         /*
-        // 강사님 풀이
         int[] currencyType = new int[]{50000, 10000, 5000, 1000, 500, 100};
 
         int refund = 25000; // 25000이라면 만원짜리 2장 5000원짜리 1장
@@ -50,14 +52,14 @@ public class CurrencyCnt {
 
         System.out.printf("5만원권 %d장\n", refund / curr50000); // 25000을 5만원으로 거슬러주면?
         // 25,000원을 5만원으로 나누었을 때 몫,나머지
-        // 25,000원을 각 화폐 단위로 나누었을 때 몫과 나머지를 출력하는 코드를 작성해주세요.
-        // 각 화폐 단위는 위와 같이 각각 변수로 선언해주세요.
+        // 25,000원을 각 화폐 단위로 나누었을 때 몫과 나머지를 출력하는 코드를 출력
+        // 각 화폐 단위는 위와 같이 각각 변수로 선언할 것
 
         System.out.printf("1만원권 몫:%d장 나머지:%d\n", refund / curr10000, refund % curr10000);
         // 5000원권은 1장만 나오게 하고싶다. 왜냐하면 25000원에서 2만원은 만원짜리 두장으로 처리했기 때문이다.
         refund = refund - (curr10000 * 2);
         // refund는 25000을 1원으로 나눈 나머지로 값을 업데이트 한다.
-            // refund = refund % 10000; // modulo 나머지 mod %
+        // refund = refund % 10000; // modulo 나머지 mod %
 
         System.out.printf("5천원권 몫:%d장 나머지:%d\n", refund / curr5000, refund % curr5000);
         refund = refund % 5000; // modulo 나머지 mod %
